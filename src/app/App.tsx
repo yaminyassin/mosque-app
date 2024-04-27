@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Text, View } from 'react-native'
 import { Dashboard } from './Dashboard'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 function HomeScreen() {
   return (
@@ -23,15 +24,17 @@ const Stack = createNativeStackNavigator()
 export function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Dashboard">
-        <Stack.Screen
-          name="Dashboard"
-          component={Dashboard}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
+      <SafeAreaProvider>
+        <Stack.Navigator initialRouteName="Dashboard">
+          <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack.Navigator>
+      </SafeAreaProvider>
     </NavigationContainer>
   )
 }

@@ -1,20 +1,20 @@
-import { LinearGradient } from 'expo-linear-gradient'
-import { View } from 'react-native'
+import { Header } from '../components/Header'
+import { BaseContainer } from '../containers/BaseContainer'
+import Back from '@assets/icons/chevron-back-outline.svg'
 
 export function Dashboard() {
   return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <LinearGradient
-        colors={['#184E68', '#57CA85']}
-        style={{ height: '100%', width: '100%', position: 'absolute' }}
-      />
-    </View>
+    <>
+      <BaseContainer>
+        <Header
+          startContent={{
+            content: <Back width={32} height={32} />,
+            onPress: () => {
+              console.log('back')
+            },
+          }}
+        />
+      </BaseContainer>
+    </>
   )
 }
