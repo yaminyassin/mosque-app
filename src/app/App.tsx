@@ -8,7 +8,7 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Text, View } from 'react-native'
-import { Dashboard } from './Dashboard'
+import { Dashboard } from './Dashboard/Dashboard'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 function HomeScreen() {
